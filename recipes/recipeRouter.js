@@ -1,6 +1,5 @@
 const express = require("express");
 const Recipes = require("./recipeModel");
-const { restart } = require("nodemon");
 const router = express.Router();
 
 router.get("/", (req, res) => {
@@ -23,7 +22,7 @@ router.get("/:id/shopping_list", (req, res) => {
     });
 });
 
-router.get(":id/instructions", (req, res) => {
+router.get("/:id/instructions", (req, res) => {
   Recipes.getInstructions(req.params.id)
     .then((instructions) => {
       res.status(200).json(instructions);
