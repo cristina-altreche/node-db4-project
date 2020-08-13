@@ -6,7 +6,7 @@ module.exports = {
     connection: {
       filename: "./dev.sqlite3",
     },
-    useNullableAsDefault: true,
+    useNullAsDefault: true,
     pool: {
       //ONLY FOR SQLITE: whenever setting up a foreign key in SCHEMA you need this POOL in knex file. If this is missing then foreign keys will be added without matching to the primary key. This prevents that from happening
       afterCreate: (conn, done) => {
